@@ -1,0 +1,70 @@
+﻿.label
+{
+    background-color: #7BA6F7;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 12px;
+}
+.mandatory
+{
+    color: Red;
+    width: 5px;
+}
+.button
+{
+    background-color: #1061E7;
+    font-family: Verdana;
+    font-size: 10px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+.font
+{
+    font-family: Verdana;
+    font-size: 12px;
+}
+.tablehead
+{
+    font-family: Verdana;
+    color: Blue;
+}
+
+.errormsg
+{
+    font-family: Verdana;
+    font-size: 12px;
+    color: Red;
+}
+.date
+{
+    background-color: #EFEFE7;
+}
+.imgbutton
+{
+    cursor: pointer;
+}
+.gridhead
+{
+    background-color: #7BA6F7;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 12px;
+    width: 100px;
+    text-align: center;
+}
+.gridbuttonwidth
+{
+    background-color: #7BA6F7;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 12px;
+    width: 20px;
+    text-align: center;
+}
+.div
+{
+    overflow: auto;
+    height: 100%;
+    width: 95%;
+}

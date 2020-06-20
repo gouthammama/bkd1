@@ -1,0 +1,333 @@
+<html>
+<head>
+    <title></title>
+    <script src="https://www.google.com/jsapi" type="text/javascript"></script>
+    <script src="js/Hotelmangementsystem.js" type="text/javascript"></script>
+    <script type="text/javascript">        google.load("jquery", "1.3.2")</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">        google.load("jqueryui", "1.7.2")</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"
+        type="text/javascript"></script>
+    <script type="text/javascript" src="Js/ui.datepicker.js"></script>
+    <link href="css/jquery-ui-sunny.css" rel="stylesheet" type="text/css" />
+    <link href="css/hotel.css" rel="Stylesheet" type="text/css" />
+    <script src="Js/calendar-config.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" media="screen, projection, handheld" href="Css/jquery-ui-sunny.css" />
+</head>
+<body onload="gtime()" style="overflow-x:hidden">
+<form id="form1">
+   <div style="overflow:hidden">
+<h4 align="right"><a href="../index.html" >Home</a></h4>
+    <label id="lblErrorMsg" style="color: red">
+    </label>
+    <table id="tbl" class="tbl" border="0" align="center">
+        <tr>
+            <td class="lblheading" align="center">
+                <b /><u />Hotel Management System
+            </td>
+        </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" id="tbl2" class="tbl2" border="0">
+        <tr>
+            <td colspan="3" class="lblfnt">
+                Fields marked with '<font color="red">*</font>' are mandotory
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <b><u>Customer information</u></b>
+            </td>
+        </tr>
+        <tr>
+            <td width="100px">
+                <font color="red">*</font>Customer Name:
+            </td>
+            <td>
+                <input type="text" id="cn" onkeypress="return namevalidation(event)" maxlength="32" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp Customer Id
+            </td>
+            <td id="ci">
+                500
+            </td>
+        </tr>
+        <tr>
+            <td id="gender">
+                <font color="red">*</font>Gender
+            </td>
+            <td>
+                <input type="radio" id="m" name="sex" value="Male" checked="checked" />Male
+                <input type="radio" id="f" name="sex" value="Female"/>Female
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp Address
+            </td>
+            <td>
+                <textarea rows="3" cols="15 " id="address" maxlength="256" style="max-width:100px"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>State
+            </td>
+            <td>
+                <select id="sel">
+                    <option>...select....</option>
+                    <option value="AP" id="a">AP</option>
+                    <option value="MP" id="mp">MP</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td id="lan">
+                &nbsp Language preferred
+            </td>
+            <td>
+                <input type="checkbox" id="t" value="Telugu" name="telugu" checked="checked" />Telugu
+                <input type="checkbox" id="e" value="English" name="english" />English
+                <input type="checkbox" id="h" value="Hindi" name="hindi" />Hindi
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>Passport Number
+            </td>
+            <td>
+                <input type="text" id="p" maxlength="9" onkeypress="return passVal(event)"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="width200px">
+                <font color="red">*</font>Mobile Number
+            </td>
+            <td class="width100px">
+                <input type="text" id="mbn" onkeypress="return numvalidation(event)" maxlength="10" />
+            </td>
+            <td>
+                (Example:9908870081)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>Phone Number
+            </td>
+            <td class="width100px">
+                <input type="text" id="phn" maxlength="10" onkeypress="return numvalidation(event)" />
+            </td>
+            <td>
+                (Example:9908870081)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <b><u>Check In Information</u></b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>Check In Date
+            </td>
+            <td class="width200px">
+                <input type="text" id="indate" onmouseover="gtime()" readonly="readonly" />
+            </td>
+            <td class="width100px">
+                <font color="red">*</font>Check Out Date
+            </td>
+            <td>
+                <input name="PickupDate" type="text" id="PickupDate" class="pUpDate" onchange="duration()"
+                    readonly="readonly" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp Duration(in Days)
+            </td>
+            <td>
+                <label id="duration">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <b><u>Room Information</u></b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>Room Type
+            </td>
+            <td>
+                <select id="sel2" onchange="duration()">
+                    <option>select</option>
+                    <option value="single BD" id="single">single BD</option>
+                    <option value="doble BD" id="double">doble BD</option>
+                </select>
+            </td>
+            <td>
+                <label id="lbl">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>Room Number
+            </td>
+            <td>
+                <select id="sel3">
+                    <option>..select..</option>
+                    <option value="100" id="1">100</option>
+                    <option value="101" id="2">101</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td id="facilities">
+                &nbsp Facilities
+            </td>
+            <td colspan="5">
+                <input type="checkbox" id="bf" name="facilities" checked="checked" value="Breakfast" />Breakfast
+                <input type="checkbox" id="lunch" name="facilities" value="Lunch" />Lunch
+                <input type="checkbox" id="dinner" name="facilities" value="Dinner" />Dinner
+                <input type="checkbox" id="snacks" name="facilities" value="Snacks" />Snacks
+                <input type="checkbox" id="paper" name="facilities" value="Paper" />Paper
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp Total
+            </td>
+            <td>
+                <input type="text" id="total" readonly="readonly" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <font color="red">*</font>Advance Paid
+            </td>
+            <td>
+                <input type="text" id="ap" onkeypress="return numvalidation(event)" onblur="bale()" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp Balance
+            </td>
+            <td>
+                <input type="text" id="bal" readonly="readonly" />
+            </td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <table align="center">
+                <tr><td></td></tr>
+                    <tr>
+                        <td id="addb">
+                            <input type="button" id="add" class="button" value="Add" onclick="addVal()" />
+                        </td>
+                        <td id="clear2">
+                            <input type="button" id="clear" class="button" value="Clear" onclick="clearVal()" />
+                        </td>
+                        <td>
+                            <input type="submit" class="button" value="Cancel"/>
+                        </td>
+                    </tr>
+                 
+                <tr><td></td></tr>
+                </table>
+            </td>
+        </tr>
+        <tr><td></td></tr>
+        <tr>
+            <td colspan="7" style="overflow:auto; width:500%; height:99px">
+            <div class="scroll">
+                <table id="tblgrid" border="0" class="td">
+                    <tr>
+                        <td colspan="20" bgcolor="#7BA6F7" class="lblfont">
+                            AvailableRecords:<label id="lblcount">0</label>
+                        </td>
+                    </tr>
+                    <tr bgcolor="#7BA6F7" class="lblfont">
+                        <td align="center">
+                            E
+                        </td>
+                        <td align="center">
+                            D
+                        </td>
+                        <td align="center">
+                            Customer Name
+                        </td>
+                        <td align="center">
+                            Customer Id
+                        </td>
+                        <td align="center">
+                            Gender
+                        </td>
+                        <td align="center">
+                            Address
+                        </td>
+                        <td align="center">
+                            State
+                        </td>
+                        <td align="center">
+                            Languages<br />
+                            Prefferd
+                        </td>
+                        <td align="center">
+                            Passport
+                            Number
+                        </td>
+                        <td align="center">
+                            Phone<br />
+                            Number
+                        </td>
+                        <td align="center">
+                            Mobile
+                            Number
+                        </td>
+                        <td align="center">
+                            CheckInDate                   
+                           
+                        </td>
+                        <td align="center">
+                            CheckOutDate
+                        </td>
+                        <td align="center">
+                            Duration
+                        </td>
+                        <td align="center">
+                            RoomType
+                        </td>
+                        <td align="center">
+                            Room<br />
+                            Number
+                        </td>
+                        <td align="center">
+                            Facilities
+                        </td>
+                        <td align="center">
+                            Total
+                        </td>
+                        <td align="center">
+                            Advance Paid
+                        </td>
+                        <td align="center">
+                            Balance
+                        </td>
+                    </tr>
+                </table>
+                  </div>
+            </td>
+        </tr>
+    </table>
+   </div>
+   </form>
+</body>
+</html>

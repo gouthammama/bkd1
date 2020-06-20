@@ -1,0 +1,114 @@
+﻿      .header_width
+       {
+
+     width:855px;
+
+       }
+  #txt_present
+        {
+            width: 238px;
+            height: 65px;
+        }
+        #txt_permanent
+        {
+            width: 238px;
+            height: 65px;
+        }
+
+      .Dateimg_align
+      {
+ vertical-align:text-bottom;
+cursor: pointer;
+
+       }
+        #txt_dob
+        {
+            margin-left: 0px;
+        }
+        #txt_phone
+        {
+            margin-left: 0px;
+        }
+      
+        #sel_course
+        {
+            width: 128px;
+            margin-left: 2px;
+        }
+        .button
+        {
+         background-color:#22269B;
+         color:White;  
+        }
+       
+        #txt_dor
+        {
+           
+            height: 22px;
+            margin-right: 0px;
+        }
+       
+  .color_button
+        {
+            background-color: #7BA6F7;
+            
+            font-weight:bold;
+            font-family:Verdana;
+       	
+        }
+        .change
+        {
+            cursor: pointer;
+        }
+        .font
+        {
+            
+            font-family:Verdana;
+       
+            
+            
+        }
+       
+        .tablegrid
+        {
+        width:100%;
+        }
+.mandatory
+{
+
+color:red;
+}
+#Divgrid
+{
+overflow:auto;
+width:100%;
+
+
+}
+#gridfont1
+{
+font-size:12px;
+
+}
+#gridfont2
+{
+font-size:12px;
+
+}
+.dob_width
+{
+width:100px;
+}
+.table_font
+{
+    
+    color: #2F396E;
+    font-family: verdana,arial,helvetica,geneva,sans serif;
+    font-weight: normal;
+    font-size: 13px;
+    height: 100px;
+}
+.txt_show
+{
+display:none;
+}

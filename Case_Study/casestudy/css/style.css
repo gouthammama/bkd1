@@ -1,0 +1,66 @@
+﻿
+        .grid
+        {
+            background-color: #7BA1F0;
+        text-align:center;
+        }
+  .grid1
+        {
+            background-color: #7BA1F0;
+        text-align:left;
+        }
+        .main
+        {
+            font-size: x-large;
+            font-weight: bold;
+}
+.color
+{
+color:red;
+}
+    .width100px
+{
+width:100px;
+}
+
+
+.width250px
+{
+width:250px;
+}
+.div1
+{
+overflow:auto;
+width: 500px;
+height: 200px;
+}
+.table2
+{
+    width: 700px;
+    text-align: center;
+}
+.cursor1
+{
+ cursor:pointer;
+}
+
+.div2
+{
+
+overflow:auto;
+width:100%;
+}
+.btn
+{
+background-color:#3149EF;
+}
+.img
+{
+ vertical-align:middle;
+}
+.tbl_style
+{
+    align:center;
+     width:1500px;
+     height:100px;
+}

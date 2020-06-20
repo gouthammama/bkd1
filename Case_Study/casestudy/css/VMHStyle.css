@@ -1,0 +1,52 @@
+﻿.label
+{
+color:#427DC6;
+}
+.width5px
+{
+width:5px;
+}
+.h1
+{
+background-color:#ADCFEF;
+font-weight:bold;
+width:20px;
+}
+.h2
+{
+background-color:#ADCFEF;
+font-weight:bold;
+width:400px;
+}
+.h3
+{
+background-color:#ADCFEF;
+font-weight:bold;
+width:400px;
+}
+.body
+{
+	font-family:Arial;
+	font-size:11px;
+	
+}
+.button
+{
+background-color:#427DC6;
+	font-family:Arial;
+	font-size:11px;
+color:#fff;
+font-weight:bold;
+cursor:pointer;
+
+}
+.pointer
+{
+    cursor:pointer;
+}
+
+.mandatory
+{
+    color:red;
+    width:5px;
+}

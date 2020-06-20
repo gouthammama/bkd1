@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script language="javascript" type="text/javascript" src="Js_Files/dhtmlgoodies_calendar.js"></script>
+    <link href="css/dhtmlgoodies_calendar.css" rel="stylesheet" type="text/css"></link>
+    <link href="css/invent.css" rel="stylesheet" type="text/css"></link>
+    <script type="text/javascript" language="javascript" src="Js_Files/invnt.js">
+    </script>
+</head>
+<body onload="dis()">
+<h4 align="right"><a href="../index.html" >Home</a></h4>
+    <label id="lbl" class="labelstyle">
+    </label>
+  
+    <form id="form2" action="">
+    <label id="lbl_err" class="labelstyle"></label>
+     <label id="lblerr" class="labelstyle"></label> 
+    <label id="lbl_txterr" class="labelstyle"></label>
+    <label id="lblerr_TotalStock" class="labelstyle"></label>
+    <label id="lbl_SAUsales" class="labelstyle"></label>
+    
+        <h3 align="center">
+            Inventory Management System</h3>
+        <br />
+        <h5>
+            <u>Product Details</u></h5>
+        <table cellspacing="0"  cellpadding="0"  border="0">
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td class="style1">
+                    Product Type
+                </td>
+                <td>
+                    <select id="sel_product">
+                        <option value="Select">----Select----</option>                        
+                        <option value="Finished Goods">Finished Goods</option>
+                        <option value="Raw Materials">Raw Materials</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td class="style1">
+                    Product No
+                </td>
+                <td>
+                    <input type="text" id="txt_pno" maxlength="10" onkeypress=" return AcceptsNumbers(event)"/></td>
+               
+               
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td class="style1">
+                    Product Name
+                </td>
+                <td>
+                    <input type="text" id="txt_pname" onkeypress="return AcceptsTextOnly(event)"/>
+                </td>
+                
+                
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td class="style1">
+                    Total Stock Units
+                </td>
+                <td>
+                    <input type="text" id="txt_stock" onkeypress=" return AcceptsNumbers(event)" onblur="stockAftrSales()" />
+                </td>
+               
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td align="center" class="style2">
+                    <input type="radio" id="sales" name="Sales" checked="checked"/>Sales<input
+                        type="radio"  name="Sales" id="purchase" disabled="disabled" />Purchase
+                </td>
+            </tr>
+        <tr>
+        <td></td>
+        <td><h5 class="width200px">
+            <u>Sales Details</u></h5></td>
+        </tr>
+      
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td class="style1">
+                    Order date
+                </td>
+                <td>
+                    <table cellspacing="0" cellpadding="0"  border="0">
+                        <tr>
+                            <td>
+                                <input type="text" name="orderDate" class="inputstyle" readonly="readonly" id="txt_order" onkeypress="return false" />
+                            </td>
+                            <td class="width5px"></td>
+                            <td>
+                                <img src="images/Calender.gif" alt="Calendar" onclick="displayCalendar(document.forms[0].orderDate,'yyyy-mm-dd',this)" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="style8">
+                </td>
+                <td class="style6">
+                </td>
+                <td class="style9">
+                    Order By
+                </td>
+                <td class="style6">
+                    <input type="text" id="txt_orderby" onkeypress="return AcceptsTextOnly(event)"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td class="style1">
+                    Sales Units
+                </td>
+                <td class="style1">
+                 
+                    <input type="text" id="txt_salUnit" maxlength="10" onblur="stockAftrSales()" onkeypress=" return AcceptsNumbers(event)" />
+                </td>
+                
+                <td class="width180px">
+                </td>
+                <td class="mandatory">
+                    *
+                </td>
+                <td>
+                    Sales Unit Rate
+                </td>
+                <td>
+                    <input type="text" id="txt_srate" maxlength="10" onblur="bill()" onkeypress=" return AcceptsNumOnly(event)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="style3">
+                    Credit Allowed
+                </td>
+                <td>
+                    <input type="checkbox" id="chk_1" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td class="style3">
+                    Payment By
+                </td>
+                <td colspan="2">
+                    <input type="radio" id="cash" value="Cash" checked="checked" name="pay" onclick="funDisplay()" />Cash<input
+                        type="radio" value="Credit" id="credit" name="pay" onclick="funDisplay()" />CreditCard<input
+                            type="radio" value="NEFT" name="pay" id="neft" onclick="funDisplay()" />NEFT<input
+                                type="radio" name="pay" value="DD" id="dd" onclick="funDisplay()" />DD
+                </td>
+                <td>
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td><label id="lbl_mand"  class="mandatory">*</label></td>
+                <td><label id="lbl_credit">Credit Card Number</label></td>
+                <td><input type="text" id="txt_credit" maxlength="16" onkeypress=" return AcceptsNumbers(event)" /></td>
+                              </tr>
+                <tr>
+                 <td><label id="lbl_mandneft"  class="mandatory">*</label></td>
+                <td><label id="lbl_neft" >NEFT</label></td>
+                <td><input type="text" id="txt_neft"  maxlength="10" onkeypress=" return AcceptsNumbers(event)"/></td>
+                </tr>
+                <tr>
+                 <td><label id="lbl_mdd" class="mandatory">*</label></td>
+                <td><label id="lbl_dd">DD</label></td>
+                <td><input type="text" id="txt_dd" maxlength="6" onkeypress=" return AcceptsNumbers(event)" /></td>
+              
+              </tr>
+           
+            <tr>
+                <td>
+                </td>
+                <td class="style4">
+                    Bill Amount:
+                </td>
+                <td>
+                    <label id="lbl_bill">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td class="wdith180px">
+                </td>
+                <td class="style4">
+                    Stock Units After Sales:
+                </td>
+                <td>
+                    <label id="lbl_sunitaftr">
+                    </label>
+                </td>
+                <td class="width150px">
+                </td>
+                <td>
+                </td>
+                <td>
+                    Warranty Date
+                </td>
+                <td class="width280px" colspan="2">
+                    <table  cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td class="style5">
+                                <input type="text" id="txt_war" name="warDate" readonly="readonly" onkeypress="return false" />
+                            </td>
+                            <td class="width5px"></td>
+                            <td class="style5">
+                                <img src="images/Calender.gif" alt="Calendar" onclick="displayCalendar(document.forms[0].warDate,'yyyy-mm-dd',this)" />
+                            </td>
+                         </tr>
+                  </table>
+                   </td>
+                </tr>
+        <tr>
+            <td>
+            </td>
+            <td class="style4">
+                Descriprion
+            </td>
+            <td colspan="4">
+                <textarea id="des" cols="45" rows="4"></textarea>
+            </td>
+        </tr>
+        </table>
+        <table>
+            <tr>
+                <td class="width350px">
+                </td>
+                <td class="width150px">
+                </td>
+                <td>
+                    <label id="update">
+                    </label>
+                    <input type="button" id="btn_submit" class="buttonstyle" value="Submit" onclick="javascript:submitData()" />
+                </td>
+                <td class="width31px">
+                    <label id="lbl_clr">
+                    </label>
+                    <input type="button" id="btn_clr" class="buttonstyle" value="Clear" onclick="clr()" />
+                </td>
+                <td class="width50px">
+                    <input type="submit" id="btn_cancel" class="buttonstyle" value="Cancel"  />
+                </td>
+            </tr>
+        </table>
+       <div class="scrollstyle">
+        <table id="table_grid" border="0" class="width2000px" cellpadding="1" cellspacing="1">
+            <tr>
+                <td  class="grid " colspan="19">
+                    Available Records:<label id="lbl_avl">0</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="grid" align="center">
+                    E
+                </td>
+                <td class="grid" align="center">
+                    D
+                </td>
+                <td class="grid"   align="center">
+                    Product Type
+                </td>
+                <td class="grid"   align="center">
+                    Product Number
+                </td>
+                <td class="grid width90px"  align="center">
+                    Product Name
+                </td>
+                <td class="grid"  align="center">
+                    Stock Units
+                </td>
+                <td class="grid"  align="center">
+                    OrderDate
+                </td>
+                <td class="grid"  align="center">
+                    Ordered By
+                </td>
+                <td class="grid"   align="center">
+                    Sales Units
+                </td>
+                <td class="grid" align="center">
+                    Sales Unit Rate
+                </td>
+                <td class="grid"  align="center">
+                    Bill Amount
+                </td>
+                <td class="grid"  align="center">
+                    Stock After Sales
+                </td>
+                <td class="grid"  align="center">
+                    Amount Credited
+                </td>
+                <td class="grid"  align="center">
+                    Warranty Date
+                </td>
+                <td class="grid" align="center">
+                    Payment Mode
+                </td>
+                <td class="grid"  align="center">
+                    Card No/IFSC Code/DD Num
+                </td>
+                <td align="center"  class="grid">
+                    Is Credit Allowed
+                </td>
+                <td class="grid"  align="center">
+                    Balance
+                </td>
+                <td align="center"  class="grid">
+                    Description
+                </td>
+            </tr>
+        </table>
+       </div>
+    </form>   
+</body>
+</html>
+ 

@@ -1,0 +1,302 @@
+<html>
+<head>
+    <title>online exam registration</title>
+    <link rel="stylesheet" type="text/css" href="OnlineExamRegistration_css/dhtmlgoodies_calendar.css" />
+  <link rel="stylesheet" type="text/css" href="OnlineExamRegistration_css/onlineexamreg.css" />
+    <script type="text/javascript" src="OnlineExamRegistration_js/validateregistrationform.js"></script>
+    <script type="text/javascript" src="OnlineExamRegistration_js/dhtmlgoodies_calendar.js"></script>
+  
+</head>
+<body  onload="javascript:click()">
+    <form id="form1">
+<h4 align="right"><a href="../index.html" >Home</a></h4>
+    <label class="lblcolor" id="lblerrmsg"></label>
+    <table align="center">
+        <tr>
+            <td colspan="4" align="center">
+                <h3><u><b>Online Exam Registration </b></u></h3>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"><label  id="lblrecupdsuc" class="lbl">*Record Inserted Successfully</label></td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+                FirstName
+            </td>
+            <td>
+                LastName
+            </td>
+        </tr>
+        <tr>
+            <td class="width5px">
+                *
+            </td>
+            <td>
+                Candidate Name
+            </td>
+            <td>
+                <input type="text" id="firstnameid" onkeypress="javascript:return validtxtvalue(event)" />
+            </td>
+            <td>
+                <input type="text" id="lnameid" onkeypress="javascript:return validtxtvalue(event)" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Father's Name
+            </td>
+            <td>
+                <input type="text" id="fathernameid" onkeypress="javascript:return validtxtvalue(event)" />
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Date of Birth
+            </td>
+              <td>        
+                <input type="text" id="dofb" name="thedate" readonly="readonly"/>&nbsp;
+              <img src="images/Calendar.jpg" class='imgcal' alt="Calendar" onclick="displayCalendar(document.forms[0].thedate,'yyyy-mm-dd',this)" />              
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Mobile No.
+            </td>
+            <td>
+                <input type="text" maxlength="10" id="mbn" onkeypress="javascript:return validmobilenum(event)" />
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td class="width5px">
+               *
+            </td>
+            <td>
+                Percentage of Disability
+            </td>
+            <td>
+                <select class="widthsel" id="perofdisalty">
+                    <option value="select">---Select---</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Gender
+            </td>
+            <td>
+                <input type="radio" checked="checked"  name="gender" id="rad_male" value="Male"/>Male
+                <input type="radio" name="gender" id="rad_fem" value="Female"/>Female
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Address
+            </td>
+            <td>
+                <textarea id="address" rows="3" cols="20"></textarea>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td class="width5px">
+                *
+            </td>
+            <td>
+                Qualification
+            </td>
+            <td>
+                <select class="widthsel" id="qualification">
+                    <option value="select">---Select---</option>
+                    <option value="10th">10th</option>
+                    <option value="Inter">Inter</option>
+                    <option value="Graduate">Graduate</option>
+                    <option value="PostGraduate">PostGraduate</option>
+                    <option value="PHD">PHD</option>
+                </select>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                College Name
+            </td>
+            <td>
+                <input type="text" id="clgname" onkeypress="javascript:return validtxtvalue(event)"/>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Candidate ID
+            </td>
+            <td>
+                <input type="text" id="candidateid" onkeypress="javascript:return validdatecanid(event)"/>
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td rowspan="3">
+                Languages
+            </td>
+            <td>
+                <input type="checkbox" id="chbenglish" value="English"/>English
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="checkbox" id="chbtelugu" value="Telugu"/>Telugu
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="checkbox" id="chbhindi" value="Hindi"/>Hindi
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <table align="center">
+                    <tr>
+                        <td id="lblchange">
+                           <input type='button' value='Submit' class="clsbutton"  onclick='javascript:return clicksubmit();'/></td>
+                           <td id="lblchange1"><input type="button"   class="clsbutton" value="Clear" onclick="javascript:return clickclear()"/></td>
+                          <td> <input type="Submit" value="Cancel"   class="clsbutton" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+            </td>
+        </tr>
+        </table>
+        <div class="divcls">
+            <table border="0"   id="tabinner" align="center" >
+                    <tr>
+                        <td colspan="14" class="grid">
+                            Avialable Records:<label id="lblcount">0</label>
+                        </td>
+                    </tr>
+                    <tr class="grid" align="center">
+                        <td>
+                            Edit
+                        </td>
+                        <td>
+                            Delete
+                        </td>
+                        <td class="widthtab">
+                            Candidate ID
+                        </td>
+                        <td class="widthtab">
+                            First Name
+                        </td>
+                        <td class="widthtab">
+                            Last Name
+                        </td>
+                        <td class="widthtab">
+                            Father's Name
+                        </td>
+                        <td class="widthtab">
+                            DateofBirth
+                        </td>
+                        <td class="widthtab">
+                            Percentage of Disability
+                        </td>
+                        <td>
+                            Gender
+                        </td>
+                        <td class="widthtab">
+                            Address
+                        </td>
+                        <td>
+                            Qualification
+                        </td>
+                        <td>
+                            Languages
+                        </td>
+	       <td class="widthtab">
+                            College Name
+                        </td>
+	       <td class="widthtab">
+                            Mobile Number
+                        </td>
+                    </tr>
+                </table>
+              </div>
+    </form>
+</body>
+</html>

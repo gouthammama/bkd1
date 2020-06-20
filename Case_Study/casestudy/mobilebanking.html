@@ -1,0 +1,282 @@
+<html>
+<head>
+    <title>Mobile Banking</title>
+    <link href="MobileBanking_css/Mobilebanking.css" rel="Stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="MobileBanking_JS/MobileBanking.js"></script>
+</head>
+<body onload="gettime()">
+    
+    <div>
+        <h4 align="right"><a href="../index.html" >Home</a></h4>
+        <h3 align="center" class="tablehead">
+            <u>Mobile-Banking</u></h3>
+        <label id="lblerr" class="errormsg">
+        </label>
+        <table align="center" class="font" width="600">
+            <tr>
+                <td colspan="15" align="right">
+                    Date:
+                    <input type="text" id="date" class="date" readonly="readonly" />
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td>
+                    First Name:
+                </td>
+                <td class="textbox">
+                    <input type="text" id="firstname" onkeypress="return namefields(event)" />
+                </td>
+                <td align="right">
+                    Last Name:<input type="text" id="lastname" onkeypress="return namefields(event)" />
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td>
+                    Account Number:
+                </td>
+                <td>
+                    <input type="text" id="accountnumber" maxlength="12" onkeypress="return Numberonkey(event)" />
+                </td>
+                <td align="right">
+                    (Account Number must be 12 digits)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Contact Number:
+                </td>
+                <td>
+                    <input type="text" id="contactnumber" maxlength="10" onkeypress="return Numberonkey(event)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    E-MailId:
+                </td>
+                <td>
+                    <input type="text" id="emailid" onblur="javascript:email(this.id)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Address:
+                </td>
+                <td>
+                    <textarea rows="3" cols="15" id="address"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td>
+                    Account Type:
+                </td>
+                <td>
+                    <input type="radio" id="accounttypesavings" name="accountype" value="Savings" onclick="acuntbalanceonchange()" />Savings
+                    <input type="radio" id="accounttypecurrent" name="accountype" value="Current" onclick="acuntcurrent()" />Current
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Account Balance:
+                </td>
+                <td>
+                    <label id="accountbalance">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <label>
+                        <u><b>Transfer To</b></u></label>
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td>
+                    First Name:
+                </td>
+                <td>
+                    <input type="text" id="tfirstname" onkeypress="return namefields(event)" />
+                </td>
+                <td align="right">
+                    Last Name:<input type="text" id="tlastname" onkeypress="return namefields(event)" />
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td>
+                    Account Number:
+                </td>
+                <td class="textbox">
+                    <input type="text" id="taccountnumber" maxlength="12" onkeypress="return Numberonkey(event)" />
+                </td>
+                <td align="right">
+                    (Account Number must be 12 digits)
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td>
+                    Account With:
+                </td>
+                <td>
+                    <select id="accountwith">
+                        <option value="-----select------">-----select------</option>
+                        <option value="ANDHRA BANK">ANDHRA BANK</option>
+                        <option value="HDFC">HDFC</option>
+                        <option value="ICICI">ICICI</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">
+                    *
+                </td>
+                <td>
+                    Amount to Transfer:
+                </td>
+                <td>
+                    <input type="text" id="amounttobetransfer" onkeypress="return Numberonkey(event)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Contact Number:
+                </td>
+                <td>
+                    <input type="text" id="tcontactnumber" maxlength="10" onkeypress="return Numberonkey(event)" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <label>
+                        <u><b>Requests</b></u></label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    Request for
+                </td>
+                <td colspan="15">
+                    <input type="checkbox" id="checkbook" checked="checked" value="Cheque Book" />Cheque
+                    Book
+                    <input type="checkbox" id="creditcard" value="CreditCard" />CreditCard
+                    <input type="checkbox" id="loans" value="Loans" />Loans
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="15" align="center">
+                    <table>
+                        <tr>
+                            <td align="center" colspan="15" id="tdsub">
+                                <input type="button" class="button" value="Submit" onclick="submitbutton()" />&nbsp;&nbsp;
+                            </td>
+                            <td id="tdclr">
+                                <input type="button" class="button" value="Clear" id="_clear" onclick="clearbutton()" />&nbsp;&nbsp;
+                            </td>
+                            <td>
+                                <input type="submit" class="button" value="Cancel" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div align="center" class="div">
+            <table align="center" id="Mob_Bankingdetails" border="0">
+                <tr>
+                    <td colspan="17" class="label">
+                        AvailableRecords :<label id="availablerecords">0</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="gridbuttonwidth">
+                        E
+                    </td>
+                    <td class="gridbuttonwidth">
+                        D
+                    </td>
+                    <td class="gridhead">
+                        First Name
+                    </td>
+                    <td class="gridhead">
+                        Last Name
+                    </td>
+                    <td class="gridhead">
+                        Account Number
+                    </td>
+                    <td class="gridhead">
+                        Contact Number
+                    </td>
+                    <td class="gridhead">
+                        E-MailId
+                    </td>
+                    <td class="gridhead">
+                        Address
+                    </td>
+                    <td class="gridhead">
+                        Account Type
+                    </td>
+                    <td class="gridhead">
+                        Account Balance
+                    </td>
+                    <td class="gridhead">
+                        To First Name
+                    </td>
+                    <td class="gridhead">
+                        To Last Name
+                    </td>
+                    <td class="gridhead">
+                        To Account Number
+                    </td>
+                    <td class="gridhead">
+                        Bank
+                    </td>
+                    <td class="gridhead">
+                        Amount To Transfer
+                    </td>
+                    <td class="gridhead">
+                        Contact Number
+                    </td>
+                    <td class="gridhead">
+                        Requests
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>

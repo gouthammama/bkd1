@@ -1,0 +1,103 @@
+﻿
+.TdRightAlign
+{
+    text-align: right;
+}
+.Buttons
+{
+    background-color: #3149EF;
+    color: White;
+    
+}
+#table2
+{
+    width:100%;
+    align: center;
+}
+#divGrid
+{
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+}
+.GridCell
+{
+    background-color: #AAC8EE;
+    text-align: center;
+    text-decoration: bold;
+    height: 30px;
+    width: 100px;
+    font-weight: bold;
+}
+.GridAvailable
+{
+    height: 30px;
+    font-weight: bold;
+    background-color: #AAC8EE;
+}
+.Mandatory
+{
+    color: Red;
+}
+.Table
+{
+    width: 600px;
+    color: #2F396E;
+    font-family: verdana,arial,helvetica,geneva,sans serif;
+    font-weight: normal;
+    font-size: 13px;
+    height: 100px;
+}
+
+#NightAllowance
+{
+    font-size: 13px;
+    color: #2F396E;
+    font-family: verdana,arial,helvetica,geneva,sans serif;
+    font-weight: normal;
+}
+
+#emp_name, #emp_id, #dob_id, #basicsal_id, #nightallw_id, #incentive_id, #desig_id
+{
+    border: 1px solid #797D83;
+    color: #2F396E;
+    font-family: verdana,arial,helvetica,geneva,sans serif;
+    font-size: 11px;
+    font-weight: normal;
+    height: 18px;
+    width: 132px;
+}
+#imgCal
+{
+    vertical-align: top;
+}
+.TextArea
+{
+    border: 1px solid #797D83;
+    color: #2F396E;
+    font-family: verdana,arial,helvetica,geneva,sans serif;
+    font-size: 11px;
+    font-weight: normal;
+    height: 52px;
+    width: 132px;
+}
+#wrklocaton, #grade_id
+{
+    border: 1px solid #797D83;
+    color: #2F396E;
+    font-family: verdana,arial,helvetica,geneva,sans serif;
+    font-size: 11px;
+    font-weight: normal;
+    height: 18px;
+    width: 132px;
+}
+
+.trHeight
+{
+    height: 25px;
+}
+
+.cursor
+{
+    cursor:pointer;
+}

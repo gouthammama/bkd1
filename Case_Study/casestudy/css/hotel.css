@@ -1,0 +1,73 @@
+﻿ .lblfnt
+        {
+            font-size: 13px;
+        }
+        .tbl2
+        {
+            font-size: 13px;
+        }
+        .button
+        {
+            background-color: blue;
+            font-size: 10px;
+            color: white;
+            font-weight: bold;
+         cursor:pointer;
+        }
+        .body
+        {
+            font-size: 15px;
+            color: #0000ff;
+        }
+        .width25
+        {
+            
+            width:100px;
+            
+            }
+        .style1
+        {
+            width:25px;
+        }
+        .style2
+        {
+            width: 50px;
+        }
+.gridalign
+{
+align:center;
+
+
+}
+.img
+{
+cursor:pointer;
+
+
+}
+ .lblfont
+        {
+            font-size: 15px;
+        }
+
+.tblgrid
+{
+height:100px;
+
+
+}
+.width200px
+{
+
+width:200px
+}
+.width100px
+{
+
+width:100px
+}
+.scroll{
+ overflow:auto;
+ width:95%;
+height:100%;
+}

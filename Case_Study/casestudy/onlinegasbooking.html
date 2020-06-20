@@ -1,0 +1,236 @@
+<html>
+<head>
+   <title></title>
+    <script type="text/javascript" src="jsfile/jquery.min.js"></script>
+    <script type="text/javascript" src="Jsfile/Cal_Latest.js"></script>
+    <link rel="Stylesheet" type="text/css" href="Style/AsCs.css" />
+    <link rel="stylesheet" type="text/css" href="Style/gasbooking.css" />
+   <script type="text/javascript" src="Jsfile/Online.js"></script>
+</head>
+<body onload="javascript:funhide()">
+    <form id="form1">
+    <div>
+   <h4 align="right"><a href="../index.html" >Home</a></h4>
+        <table align="center">
+            <tr>
+                <td>
+                   
+                </td>
+                <td>
+                </td>
+                <td align="right" colspan="4">
+                    Date
+                </td>
+                <td>
+                    <input type="text" id="txtD"  readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                            <td>
+                            </td><td  colspan="4"></td>
+                            <td>
+                                Booking Number
+                            </td>
+                            <td>
+                                <input type="text" id="txtBN" readonly="readonly"  onkeypress="javascript:return funV(event)"; />
+                            </td>
+                        </tr>
+            <tr>
+                <td>
+                </td>
+                <td width="75px">
+                </td>
+                <td>
+                    <label style="color: Red" id="lblmsg">
+                    </label>
+                    <table>
+                        <tr>
+                            <td>
+                            </td>
+                            <td colspan="3" align="center">
+                                <u><b style="font-size: 25px">Online Gas Booking</b></u>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="font-size: 18px">
+                                <i>The fields marked with <font color="red">*</font> are mandatory</i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <font color="red">*</font>
+                            </td>
+                            <td width="225px">
+                                Consumer No:
+                            </td>
+                            <td>
+                                <input type="text" id="txt1"  onkeypress="javascript:return funV(event);"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <font color="red">*</font>
+                            </td>
+                            <td>
+                                Consumer Name
+                            </td>
+                            <td>
+                                <input type="text" id="txt2" onkeypress="javascript:return funV1(event);" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                Phone Number
+                            </td>
+                            <td>
+                                <input type="text" id="txtP" maxlength="10" onkeypress="javascript:return funV(event);"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <font color="red">*</font>
+                            </td>
+                            <td>
+                                Address
+                            </td>
+                            <td>
+                                <textarea id="txtA" rows="3" cols="16"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                Date of Booking
+                            </td>
+                            <td>
+                                <input type="text" id="txtD1" readonly="readonly"  onfocus="javascript:funFocus()"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><font color="red">*</font>
+                            </td>
+                            <td>
+                                Date of Delivery
+                            </td>
+                            <td>
+                                <input type="text" id="txtD2"  readonly="readonly"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                Preferable Timing
+                            </td>
+                            <td>
+                                <input type="checkbox" id="chk1" value="Morning" />Morning
+                                <input type="checkbox" id="chk2" value="Evening" />Evening
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <font color="red">*</font>
+                            </td>
+                            <td>
+                                Type of Customer
+                            </td>
+                            <td>
+                                <select id="sel">
+                                    <option value="Select">Select</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Yearly">Yearly</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <font color="red">*</font>
+                            </td>
+                            <td>
+                                Payment Mode
+                            </td>
+                            <td>
+                                <input type="radio" id="rd1" name="rad" value="Cash" checked="checked" onclick="javascript:funHide();"/>Cash
+                                <input type="radio" id="rd2" name="rad" value="Credit" onclick="javascript:funHide();" />Credit
+                            </td>
+                        </tr>
+                        
+                        
+                    </table>
+                     <table id="table1"><tr><td></td><td></td>
+                            <td id="td1" width="229px">
+                              <label id="lblcd">Credit Card</label> 
+                            </td>
+                            <td>
+                                <input type="text" id="txtCD" maxlength="16" onkeypress="javascript:return funV(event)"; />
+                            </td>
+                        </tr></table>
+                </td>
+                <td>
+                </td>
+                <td width="75px">
+                </td>
+            </tr>
+        </table>
+       
+        <table align="center">
+            <tr>
+                <td>
+                   <label id="lblUpdate"> </label><input type="button" class="bgcolor1" name="Add" value="Add" id="btnadd"
+                        onclick="javascript:funAdd();" /></td>
+                    <td><label id="lblreset"></label><input type="button" class="bgcolor1" name="Clear" value="Clear"
+                        id="btnclear" onclick="javascript:funCan();" /></td>
+                    <td><input type="submit" class="bgcolor1" name="Cancel" value="Cancel"
+                        id="btncncl"  /></td>
+                
+            </tr>
+        </table>
+    </div>
+    <div style="overflow: auto; width:100%; height: 150px">
+        <table width="1500px" id="tbl1">
+            <tr class="bgcolor">
+                <td colspan="12">
+                    Available Records:<label id="lblA">0</label>
+                </td>
+            </tr>
+            <tr class="bgcolor">
+                <td align="center">E</td>
+                <td align="center">D</td>
+                <td align="center">
+                    Consumer No
+                </td>
+                <td align="center">
+                   Name
+                </td>
+                <td align="center">
+                    Address
+                </td>
+                <td align="center">
+                    Date of Booking
+                </td>
+                <td align="center">
+                    Date of Delivery
+                </td>
+                <td align="center">
+                    Type of Customer
+                </td>
+                <td align="center">
+                    Payment Mode
+                </td>
+                <td align="center">
+                    Booking Number
+                </td>
+                <td align="center">
+                    Preffered time of Delivery
+                </td>
+                <td align="center">Credit Card Number</td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

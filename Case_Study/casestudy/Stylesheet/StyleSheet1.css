@@ -1,0 +1,50 @@
+﻿        .mandatory
+             {
+                 color: red;
+              }
+      
+       .color_button
+        	{
+                 background-color: #7BA6F7;
+            
+                 font-weight:bold;
+                 font-family:Verdana;
+       	
+       	 }
+       
+      .change
+           {
+              cursor: pointer;
+           }
+        .font
+           {
+            
+            font-family:Verdana;
+           }
+          .gridfont
+	{
+
+	font-size:8px;
+
+	}
+	.style1
+        {
+            width: 145px;
+        }
+  	
+        .ED
+	{
+	 width:20px;
+              }
+
+         .grid_heading
+	{
+	  width:100px;
+	   
+	}   
+	.div
+	{	
+	 overflow:auto;
+	 width:100%;
+	
+	}		

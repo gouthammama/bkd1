@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="js/bankingvalidation.js"></script>
+    <script type="text/javascript" src="js/bankingnorma.js"></script>
+    <script type="text/javascript" src="js/bankingdelete.js"></script>
+   <link rel="Stylesheet" type="text/css" href="Stylesheet/StyleSheet1.css" />
+</head>
+<body onload="javascript:current()">
+    <form id="form1" action="">
+    <label id="lbl_errmsg" class="mandatory">
+    </label>
+    <div>
+<h4 align="right"><a href="../index.html" >Home</a></h4>
+        <center>
+            <table border="0">
+                <tr>
+                    <td align="center" colspan="13">
+                        <h2><u>Internet Banking System</u></h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                    </td>
+                    <td colspan="3" align="right">
+                        Date:
+                    </td>
+                    <td>
+                        <label id="date-pick">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" width="200px">
+                        <font color="red">*</font>FirstName
+                    </td>
+                    <td class="style1">
+                        <input type="text" id="text_firstname" maxlength="20" onkeypress="javascript:return alphanumeric(event)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <font color="red">*</font>LastName
+                    </td>
+                    <td class="style1">
+                        <input type="text" id="text_lastname" maxlength="20" onkeypress="javascript:return alphanumeric(event)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <font color="red">*</font>Account Number
+                    </td>
+                    <td class="style1">
+                        <input type="text" id="text_accountnumber" maxlength="11" onkeypress="javascript:return numerics(event)" />
+                    </td>
+                    <td>
+                        (ex:11121794200)
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <font color="red">*</font>Password
+                    </td>
+                    <td class="style1">
+                        <input type="password" id="text_password" maxlength="20" /><br />
+                        <label id="lbl_password" class="mandatory">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <font color="red">*</font>Contact Number
+                    </td>
+                    <td class="style1">
+                        <input type="text" id="text_contactnumber" maxlength="10" onkeypress="javascript:return numerics(event)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <font color="red">*</font>Email id
+                    </td>
+                    <td class="style1">
+                        <input type="text" id="text_email" maxlength="35" /><br />
+                        <label id="lbl_email" class="mandatory">
+                        </label></td>
+
+                        <td>
+                            (ex:abc123@gmail.com)
+                                            </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        &nbsp;
+                        Type of account
+                    </td>
+                    <td class="style1">
+                        <input type="radio" id="radio_savings" name="nature" checked="checked" value="Savings"
+                            onclick="javascript:balance()" />Savings<input type="radio" id="radio_current" name="nature"
+                                value="Current" onclick="javascript:balance()" />Current
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        &nbsp;&nbsp;Balance Available
+                    </td>
+                    <td class="style1">
+                        <input type="text" id="text_balance" maxlength="35" readonly="readonly" onkeypress="javascript:return balance(event)" /><br />
+                        <label id="lbl_balance" class="mandatory">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <u><b>Transfer from SBI to</b></u>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        &nbsp;&nbsp;Transfer To
+                    </td>
+                    <td class="style1">
+                        <input type="radio" id="radio_sbi" name="transfer" value="SBI"
+                            onclick="javascript:account()" />SBI<input type="radio" id="radio_nonsbi" name="transfer"
+                                value="Non SBI" checked="checked" onclick="javascript:account()" />Non SBI
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" id="acc_hide">
+                        <font color="red">*</font>Account with
+                    </td>
+                    <td class="style1">
+                        <select id="select_accountwith">
+                            <option>---select---</option>
+                            <option value="HDFC">HDFC</option>
+                            <option value="ICICI">ICICI</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <font color="red">*</font>Account Number
+                    </td>
+                    <td class="style1">
+                        <input type="text" id="text_accountnumbertwo" maxlength="11" onkeypress="javascript:return numerics(event)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <font color="red">*</font>Amount to transfer
+                    </td>
+                    <td class="style1">
+                        <input type="text" id="text_amounttrasfer" maxlength="20" onkeypress="javascript:return numerics(event)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        <u><b>Request For </b></u>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left">
+                        &nbsp;&nbsp;Request
+                    </td>
+                    <td class="style1">
+                        <input type="checkbox" id="check_request" value="Change of Address" onclick="javascript:show()" />Change
+                        of Address
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" id="textarea_id">
+                         <font color="red">*</font>Address
+                    </td>
+                    <td class="style1">
+                        <textarea rows="3" cols="13" id="textarea_address"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td align="right" id="lbl_update">
+                        <input class="color_button" type="button" id="button_submit" value="Submit" onclick="javascript:valid1()" />
+                    </td>
+                    <td align="right" id="lbl_clear">
+                        <input class="color_button" type="button" id="button_clear" value="Clear" onclick="javascript:clr()" />
+                    </td>
+                       <td align="left">
+                        <input class="color_button" type="submit" id="button_cancel" value="Cancel" />
+                    </td>
+                                    
+                </tr>
+            </table>
+        </center>
+        <div class="div"> 
+        <table border="0" cellpadding="1" cellspacing="1" id="table_2">
+            <tr  class="color_button" style="font-size:12px">
+                <td colspan="16">
+                    AvailableRecords:<label id="lbl_success">0</label>
+                </td>
+            </tr>
+            <tr  class="color_button" style="font-size:12px">
+                <td class="ED" align="center">
+                    E
+                </td>
+                <td align="center" class="ED">
+                    D
+                </td>
+                <td align="center" class="grid_heading">
+                    Date
+                </td>
+                <td align="center" class="grid_heading">
+                    FirstName
+                </td>
+                <td align="center" class="grid_heading">
+                    Lastname
+                </td>
+                <td align="center" class="grid_heading">
+                    A/c Number
+                </td>
+                <td align="center" class="grid_heading">
+                    Contact Number
+                </td>
+                <td align="center" class="grid_heading">
+                    Email id
+                </td>
+                <td align="center" class="grid_heading">
+                    Type of Account
+                </td>
+                <td align="center" class="grid_heading">
+                    Balance Available
+                </td>
+                <td align="center" class="grid_heading">
+                    Account with
+                </td>
+                <td align="center" class="grid_heading">
+                    Account Number
+                </td>
+                <td align="center" class="grid_heading">
+                    Amount to transfer
+                </td>
+                <td align="center" class="grid_heading">
+                    Request
+                </td>
+                <td align="center" class="grid_heading">
+                    Address
+                </td>
+                <td align="center" class="grid_heading">
+                    password
+                </td>
+            </tr>
+        </table>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<html>
+<head >
+    <title></title>
+    
+    <link href="css/dhtmlgoodies_calendar.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/Style.css" />
+  
+    <script src="js/dhtmlgoodies_calendar.js" type="text/javascript"></script>
+     <script type="text/javascript" src="js/Code.js"></script>
+    <script type="text/javascript" language="javascript"></script>
+
+   
+
+        
+    
+</head>
+<body bgcolor="#D7EBFE">
+    <form id="form2">
+    <div>
+<h4 align="right"><a href="../index.html" >Home</a></h4>
+        <font color="red">
+            <label id="lbl_err">
+            </label>
+        </font>
+        <table id="tbl_main" align="center" >
+            <tr><td>
+                </td>
+<td>
+                </td>
+                
+                <td colspan="2">
+                    <label class="main">
+                        Online Reservation</label>
+                </td>
+            </tr>
+            <tr><td class="color">*</td>
+                <td class="width250px">
+               Name of the Passenger
+                </td>
+                <td>
+                    <input type="text" id="txt_passenger" onkeypress="javascript:return keyPress(event)" />
+                </td>
+            </tr>
+            <tr><td class="color">*</td>
+                <td>
+                    Phone Number of the Passenger
+                </td>
+                <td>
+                    <input type="text" id="txt_phone" onkeypress="javascript:return keyNumeric(event)" />
+                </td>
+            </tr>
+            <tr><td class="color">*</td>
+                <td>
+                    Address of the Passenger
+                </td>
+                <td>
+                    <textarea id="txtarea" cols="25" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr><td></td>
+                <td>
+                    Book Your Domestic Flight
+                </td>
+                <td>
+                    <input type="radio" id="rad_oneway" checked="checked" name="flight" value="One Way"  onchange ="javascript:return funBlur()"/>One Way
+                    <input type="radio" id="rad_round" name="flight" value="Round Trip" onchange="javascript:return funBlur1()"/>Round Trip
+                </td>
+            </tr>
+            <tr><td class="color">*</td>
+                <td>
+                    From
+                </td>
+                <td>
+                    <select id="sel_from">
+                        <option value="Select">Select </option>
+                        <option value="Mumbai">Mumbai </option>
+                        <option value="Chennai">Chennai </option>
+                        <option value="Kolkata">Kolkata </option>
+                    </select>
+                </td>
+                <td class="width100px">
+                    <label>
+                        To</label>
+                </td>
+                <td>
+                    <select id="sel_to">
+                        <option value="Select">Select </option>
+                        <option value="Mumbai">Mumbai </option>
+                        <option value="Chennai">Chennai </option>
+                        <option value="Kolkata">Kolkata </option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td class="color">*</td>
+                <td>
+                    Departure
+                </td>
+                <td>
+                    <input type="text" id="txt_dep" name="theDep" onkeypress="javascript:return funDate(Event)" />
+
+                    <img src="images/Calender.gif"  alt="Calendar" class="cursor1 img" onclick="displayCalendar(document.forms[0].theDep,'yyyy-mm-dd',this)" />
+                </td>
+            </tr>
+            <tr><td class="color" ><label id="color1">*</label></td>
+                <td id="ret" >
+                    Return
+                </td>
+                <td>
+                
+                
+<table>
+<tr>
+<td>
+                    <input type="text" id="txt_ret" name="theRet" onkeypress="javascript:return funDate(Event)" />
+</td>
+<td>
+                    <img src="images/Calender.gif" alt="Calendar" class="cursor1 img" id="imgret" onclick="displayCalendar(document.forms[0].theRet,'yyyy-mm-dd',this)" />
+</td>
+</tr>
+</table>
+</td>
+
+            <tr><td></td>
+                <td>
+                    Adults
+                </td>
+                <td>
+                    Children
+                </td>
+                <td>
+                    Infants
+                </td>
+            </tr>
+            <tr><td></td>
+                <td>
+                    <select id="sel_adu" onchange="javascript:return funBill()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="sel_chi" onchange="javascript:return funBill()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="sel_infant" onchange="javascript:return funBill()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td></td>
+                <td>
+                    <label id="lbl_bill1">
+                        Bill Amount</label>
+                </td>
+                <td>
+                    <label id="lbl_bill">0
+                    </label>
+                </td>
+            </tr>
+            <tr><td class="color">*</td>
+                <td>
+                    Card Type
+                </td>
+                <td>
+                    <select id="sel_card">
+                        <option value="Select">Select</option>
+                        <option value="Andhra Bank">Andhra Bank</option>
+                        <option value="ICICI Bank">ICICI Bank</option>
+                         <option value="SBI">SBI</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td class="color">*</td>
+                <td>
+                    Credit Card No
+                </td>
+                <td>
+                    <input type="text" id="txt_cardno" onkeypress="javascript:return keyNumeric(event)" />
+                </td>
+            </tr>
+            <tr><td></td>
+                <td>
+                 <label id="lbl_update">  <input type="button" class="btn" id="btn_submit" value="Submit" onclick="javascript:return funSubmit()" /> </label>
+                </td>
+                <td>
+                    <label id="lbl_clr"><input type="button" id="btn_clear" class="btn" value="Clear" onclick="javascript:return funClear()" /></label>
+                </td>
+                <td>
+                    <input type="Submit" id="btn_cancel" class="btn" value="Cancel" onclick="javascript:return funCancel()" />
+                </td>
+            </tr>
+        </table>
+
+   </div>
+     <div class="div2">
+        <table id="tbl_grid" border="0" cellpadding="1" cellspacing="1" class="tbl_style">
+
+            <tr align="left" >
+                <td class="grid1" colspan="15" >
+                    Avilable Records:<label id="lbl_rec">0</label>
+                </td>
+            </tr>
+ 
+
+       <tr>
+                <td class="grid">
+                    E
+                </td>
+                <td class="grid">
+                    D
+                </td>
+                <td class="grid">
+                    Name
+                </td>
+                <td class="grid">
+                    Phone
+                </td>
+                <td class="grid">
+                    Address
+                </td>
+                <td class="grid">
+                    Type
+                </td>
+                <td class="grid">
+                    From
+                </td>
+                <td class="grid">
+                    To
+                </td>
+                <td class="grid">
+                    Departure
+                </td>
+                <td class="grid">
+                    Return
+                </td>
+                <td class="grid">
+                    Adults
+                </td>
+                <td class="grid">
+                    Childrens
+                </td>
+                <td class="grid">
+                    Infants
+                </td>
+                <td class="grid">
+                    Credit Card No
+                </td>
+                <td class="grid">
+                    Bill Amount
+                </td>
+            </tr>
+        </table>
+        </div>
+    
+    </form>
+</body>
+</html>
+

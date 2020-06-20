@@ -1,0 +1,331 @@
+<html>
+<head>
+    <title>Order for a New Bike</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" media="screen, projection, handheld" href="css/jquery-ui-sunny.css" />
+    <script src="js/calendar-config.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/ui.datepicker.js"></script>
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript" src="js/orderForNwBike.js">       
+    </script>
+    <style type="text/css">
+        .style2
+        {
+            font-size: small;
+        }
+    </style>
+</head>
+<body onload="addDate()">
+    <form id="form1">
+    <div>
+<h4 align="right"><a href="../index.html" >Home</a></h4>
+        <label id="errmsg" class="color1">
+        </label>
+        <table align="center">
+            <tr>
+                <td align="right">
+                    <table>
+                        <tr>
+                            <td class="label" align="right">
+                                Date:
+                            </td>
+                            <td>
+                                <label id="txtDt">
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label" valign="top">
+                                Dealers Name & address:
+                            </td>
+                            <td>
+                                <label>
+		         Prop: VeeraBadra,<br />
+                                    Varun Motors,<br />
+                                    d.no-15-231,<br />
+                                    near bus-stand,<br />
+                                    vijayawada.
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>
+                        Order For New Bike</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table id="tblSrc">
+                        <tr>
+                            <td class="label">
+                                <font color="red">*</font>
+                            </td>
+                            <td class="label">
+                                Customer Name:
+                            </td>
+                            <td>
+                                <input type="text" id="custNm" onkeypress="javscritpt:return alphabets(event);" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td class="label">
+                                Address
+                            </td>
+                            <td>
+                                <textarea rows="5" cols="15" style="resize: none" id="arAdd"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">
+                                <font color="red">*</font>
+                            </td>
+                            <td class="label">
+                                Phone No:
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <input type="text" size="1" value="+91" readonly="readonly" />
+                                        </td>
+                                        <td>
+                                            -
+                                        </td>
+                                        <td>
+                                            <input type="text" id="phnNum" maxlength="10" onkeypress="javascript:return numberValidation(event);" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">
+                                <font color="red">*</font>
+                            </td>
+                            <td class="label">
+                                Company Name
+                            </td>
+                            <td>
+                                <select name="state" id="sel1" onchange="javascript:funValidation();">
+                                    <option value="Select" id="opt0">Select</option>
+                                    <option value="Hero Honda" id="opt1">HeroHonda</option>
+                                    <option value="Yamaha" id="opt2">Yamaha</option>
+                                    <option value="Bajaj" id="opt3">Bajaj</option>
+                                </select>
+                            </td>
+                            <td class="label">
+                                <font color="red">*</font>
+                            </td>
+                            <td class="label">
+                                Model
+                            </td>
+                            <td>
+                                <select id="sel2" name="city" onchange="javascript:funValidation1();">
+                                    <option value="Select" id="Option1">Select</option>
+                                </select>
+                            </td>
+                            <td>
+                                <font color="red" class="label">*</font>
+                            </td>
+                            <td class="label">
+                                Color
+                            </td>
+                            <td>
+                                <select id="sel3" onchange="javascript:funCost();">
+                                    <option value="Select" id="Option2">Select</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td class="label">
+                                Accessories
+                            </td>
+                            <td>
+                                <input type="checkbox" id="accChk" value="Accessories" onclick="javascript:accrate();" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td class="label">
+                                Date Of Booking
+                            </td>
+                            <td>
+                                <label id="txtDOB">
+                                </label>
+                            </td>
+                            <td>
+                                <font color="red" class="label">*</font>
+                            </td>
+                            <td class="label">
+                                Date of Delivery
+                            </td>
+                            <td>
+                                <input name="PickupDate" type="text" id="PickupDate" class="pUpDate" onkeypress="return false" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td class="label">
+                                Payment Mode
+                            </td>
+                            <td class="label">
+                                <input type="radio" id="radCsh" name="PM" value="Cash" checked="checked" onclick="javascript:show();" />Cash
+                                <input type="radio" id="cCard" name="PM" value="Credit Card" onclick="javascript:show();" />Credit
+                                Card
+                                <input type="radio" id="cheq" name="PM" value="Cheque" onclick="javascript:show();" />Cheque
+                            </td>
+                            <td>
+                            </td>
+                            <td class="label">
+                                Cost of Bike
+                            </td>
+                            <td>
+                                <input type="text" id="txtCstBk" readonly="readonly" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="id1" class="label">
+                                    <font color="red">*</font></label>
+                            </td>
+                            <td id="id2" class="label">
+                                Credit Card no:
+                            </td>
+                            <td>
+                                <input type="text" id="txt" maxlength="16" onkeypress="javascript:return numberValidation(event);" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label id="id3" class="label">
+                                    <font color="red">*</font></label>
+                            </td>
+                            <td id="id4" class="label">
+                                Cheque no:
+                            </td>
+                            <td>
+                                <input type="text" id="txt1" maxlength="10" onkeypress="javascript:return numberValidation(event);" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <font color="red" class="label">*</font>
+                            </td>
+                            <td class="label">
+                                Advance Paid
+                            </td>
+                            <td>
+                                <input type="text" id="txtAdv" maxlength="5" onblur="balance()" onkeypress="javascript:return numberValidation(event);" />
+                            </td>
+                            <td>
+                            </td>
+                            <td class="label">
+                                Remaining Balance
+                            </td>
+                            <td>
+                                <input type="text" id="txtBal" readonly="readonly" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                            </td>
+                            <td align="right" id="td3">
+                                <label id="lblupdate">
+                                </label>
+                                <input type="button" value="Submit" class="style" id="btnSub" onclick="javascript:funSubmit();" />
+                            </td>
+                            <td align="center" colspan="2" id="td4">
+                                <input type="button" value="Clear" class="style" id="btnClr" onclick="javascript:funClear();" />
+                            </td>
+                            <td>
+                                <input type="submit" value="Cancel" id="btnCan" class="style" onclick="javascript:funCancel();" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div style="overflow: auto;width: 100%;">
+            <table id="tabTar" style="width: 1500px">
+                <tr class="color">
+                    <td colspan="17" id="td1">
+                        Available Records:<label id="lblavailabrec">0</label>
+                    </td>
+                </tr>
+                <tr class="color" "style1">
+                    <td align="center">
+                        E
+                    </td>
+                    <td align="center">
+                        D
+                    </td>
+                    <td align="center">
+                        Customer
+                    </td>
+                    <td align="center">
+                        Address
+                    </td>
+                    <td align="center">
+                        Phone No.
+                    </td>
+                    <td align="center" width="100px">
+                        Company
+                    </td>
+                    <td align="center">
+                        Model
+                    </td>
+                    <td align="center">
+                        Color
+                    </td>
+                    <td align="center">
+                        Accessories
+                    </td>
+                    <td align="center">
+                        Date of<br />
+                        Booking
+                    </td>
+                    <td align="center">
+                        Date of<br />
+                        Delivery
+                    </td>
+                    <td align="center">
+                        Payment
+                    </td>
+                    <td align="center">
+                        BikeCost
+                    </td>
+                    <td align="center">
+                        Advance<br />
+                        Paid
+                    </td>
+                    <td align="center">
+                        Remaining<br />
+                        Balance
+                    </td>
+                    <td style="display: none" id="ccno" align="center" width="160px">
+                        Credit/Card No:/Cheque No.
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

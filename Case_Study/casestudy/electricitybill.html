@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title></title>
+     <script type="text/javascript" language="javascript" src="js/ebill.js" ></script>
+     <script type="text/javascript" src="js/dhtmlgoodies_calendar.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/dhtmlgoodies_calendar.css" />
+     <link rel="stylesheet" type="text/css" href="css/ebill.css"/>
+     
+</head>
+<body onload="javascript:funhide();">
+    <form id="form1" action="">
+    <div>
+    <label id="lblerror" style="color:Red"></label>
+    <table align="center">
+				<tr>
+                    <td colspan="2"></td>
+					<td class="heading" align="center">Electricity Bill</td>  
+				</tr>
+                <tr>
+                    <td colspan="3" align="left">Fields marked with '<span class="mandatory">*</span>' are mandatory </td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Name of the Person:</td>
+                    <td><input type="text" id="txtname" maxlength="32" onkeypress="javascript:return onlyalphabets(event);" /></td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Bill number:</td>
+                    <td><input type="text" id="txtbno" maxlength="32" onkeypress="javascript:return onlynumbers(event);" /></td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Address:</td>
+                    <td><textarea rows="3" cols="40" id="tareaaddr" ></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="width150">Phase:</td>
+                    <td id="rbtn"><input type="radio" name="phase" id="rbtn1" value="Single phase" onclick="javascript:funradio();" />1-Phase
+                    <input type="radio" name="phase" id="rbtn2" onclick="javascript:funradio();" value="Three phase" />3-Phase</td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Previous Reading:</td>
+                    <td><input type="text" id="txtprevread" maxlength="32" onkeypress="javascript:return onlynumbers(event);" onchange="javascript:funblank();" onblur="javascript:funcalculate();"/></td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Present Reading:</td>
+                    <td><input type="text" id="txtpresread" maxlength="32" onkeypress="javascript:return onlynumbers(event);" onblur="javascript:fununits();" onfocus="javascript:funcalculate();" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="width150">Units:</td>
+                    <td><label id="lblunits"></label></td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Category:</td>
+                    <td><select id="selcat" onclick="javascript:funvolt();" onchange="javascript:funvolt();">
+                        <option value="select">--Select--</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="width150">Voltage:</td>
+                    <td><select id="selvolt" disabled="disabled" onchange="javascript:funprice();">
+                        <option value="select">--Select--</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="width150">Per Unit Price:</td>
+                    <td><label id="lblprice"></label></td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Bill Issue Date:</td>
+                     <td>
+                <input type="text" id="txtdate1" value="" name="thedate" onkeydown="javascript:return fundate(event);" onchange="javascript:funblank();" readonly="readonly"/>
+                <img src="images/Calendar.jpg" alt="Calendar" onclick="displayCalendar(document.forms[0].thedate,'dd-mm-yyyy',this)" />
+            </td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Final Date to Pay:</td>
+                    <td>
+                <input type="text" id="txtdate2" value="" name="thedate1" readonly="readonly" onkeydown="javascript:return fundate(event);" onchange="javascript:fundiffdate();" />
+                <img src="images/Calendar.jpg" alt="Calendar" onclick="displayCalendar(document.forms[0].thedate1,'dd-mm-yyyy',this)" />
+            </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="width150">Arrears:</td>
+                    <td><input type="checkbox" id="cbox1" onclick="javascript:fundueamt();"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="width150" id="dueamt" align="right">Due Amount</td>
+                    <td><input type="text" id="txtdueamt" maxlength="32" onkeypress="javascript:return onlynumbers(event);" onfocus="javascript:funbillamt();" /></td>
+                </tr>
+                <tr>
+                    <td class="mandatory">*</td>
+                    <td class="width150">Paid On:</td>
+                    <td>
+                <input type="text" id="txtdate3" value="" name="thedate2" onchange="javascript:funfine();" readonly="readonly" onkeydown="javascript:return fundate(event);"/>
+                <img src="images/Calendar.jpg" alt="Calendar" onclick="displayCalendar(document.forms[0].thedate2,'dd-mm-yyyy',this)" />
+            </td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+					<td align="center"><input type="button" class="button" value="Calculate" id="btncal" onclick="javascript:funcal();"/></td>  
+				</tr>
+                <tr>
+                    <td></td>
+                    <td class="width150" id="fine" align="right">Fine:</td>
+                    <td><label id="lblfine">0</label></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="width150">Bill Amount:</td>
+                    <td><label id="lblbillamt"></label></td>
+                </tr>
+                </table>
+                <table align="center">
+                <tr>                    
+					<td align="center">
+                        <label id="lblupdate"></label>
+                        <input type="button" class="button" value="Add" id="btnadd" onclick="javascript:funadd();"/>
+                    </td>
+                    <td>
+                        <label id="lblreset"></label>
+                        <input type="reset" class="button" value="Clear" id="btnclear" onclick="javascript:funreset();"/>
+                    </td>
+                    <td>
+                        <input type="submit" class="button" value="Cancel" id="btncancel" />
+                    </td>  
+				</tr>
+            </table>
+            <div id="divgrid">
+            <table cellspacing="1" id="table1" >
+                <tr class="gridbg" >
+		            <td class="leftalignbold grid" colspan="20">Total Available Records:<label id="lblar">0</label></td>
+	            </tr>
+                <tr class="gridbg" align="center">
+		            <td>Edit</td>
+		            <td>Delete</td>
+		            <td>Name</td>
+		            <td>Bill No</td>
+		            <td>Address</td>
+		            <td>Phase</td>
+		            <td>Previous Reading</td>
+		            <td>Present Reading</td>
+		            <td>Units</td>
+		            <td>Category</td>
+		            <td>Voltage</td>
+                    <td>Per Unit Price</td>
+		            <td>Bill Issue Date</td>
+		            <td>Final Date to Pay</td>
+		            <td>Arrears</td>
+		            <td>Due Amount</td>
+		            <td>Fine</td>
+                    <td>Bill Amount</td>
+		            <td>Paid On</td>
+	            </tr>
+            </table></div>
+    </div>
+    </form>
+</body>
+</html>

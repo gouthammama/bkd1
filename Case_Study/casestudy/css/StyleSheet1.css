@@ -1,0 +1,43 @@
+﻿   
+    .gridColumn
+    {
+        background-color:#6699FF;
+        }
+        .button
+        {
+          background-color:#407BBE;
+         
+            }
+            .changeImage
+            {
+                cursor:pointer;
+                }
+                .errorLabel
+                {
+                 color:Red   
+                    }
+         
+   
+            .screenHeading
+            {
+                color:Blue;
+                }
+                
+                .gridWidth
+                {
+                    width:100px;
+                    }
+                    
+                    .gridCreditCard
+                    {
+                        width:150px;
+                        }
+                        .labelResize
+                        {
+                            resize:none;
+                            }
+                            .table_grid
+                            {
+                                overflow:auto;
+                                width:100%;
+                                }

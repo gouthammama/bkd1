@@ -1,0 +1,45 @@
+﻿*
+{
+    margin:0px;
+}
+.widthfull
+{
+    width:100%;
+}
+.widthhalf
+{
+    width:50%;
+}
+.heading
+{    
+    background-color:#10519C;
+    font-family: Arial;
+    
+    width:100%;
+   }
+.individual
+{
+    background-color:#D3DDF8;
+}
+.backcolor
+{
+    background-color:#BAC8EB;
+}
+.alignleft
+{
+    text-align:left;
+}
+.headspec
+{
+    color:#ffffff;
+    text-align:left;
+}
+.width300
+{
+    width:300px;
+}
+.imgsize
+{ 
+    height:128px;
+    width:128px;
+}

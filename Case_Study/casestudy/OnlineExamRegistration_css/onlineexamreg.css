@@ -1,0 +1,53 @@
+ .lblcolor
+    {
+        color:Red;
+    }
+ .clsbutton
+{
+	font-weight: bold;
+	font-size: 10px;
+	color: #fff;
+	font-family: Verdana;
+	background-color: #457EC0;
+	cursor: pointer;
+}
+
+.grid
+{
+background-color:#7BA6F7;
+font-weight:bold;
+font-size:13px;
+}
+.lbl
+{
+color:green;
+}
+.widthsel
+{
+width:37mm;
+}
+.img
+{
+cursor: pointer;
+}
+.widthtab
+{
+width:100px;
+}
+.width5px
+{
+width:5px;
+color:Red;
+}
+.imgcal
+{
+    vertical-align:top;
+    cursor:pointer;   
+}
+
+.divcls
+{
+overflow:auto; 
+width:95%;
+height:100%;
+}

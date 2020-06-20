@@ -1,0 +1,230 @@
+﻿<html>
+<head>
+    <title>Library Management System</title>
+    <link href="css/library_stylesheet.css" rel="stylesheet" type="text/css" />
+    <link href="css/dhtmlgoodies_calendar.css" rel="stylesheet" type="text/css" />
+    <script src="js/dhtmlgoodies_calendar.js" type="text/javascript"></script>
+    <script src="js/librarymanagement.js" type="text/javascript"></script>
+  </head>
+<body onload="funClear()">
+    <form id="form2">
+    <label id="lbl1" class="errormsg"></label>
+    <div>
+<h4 align="right"><a href="../index.html" >Home</a></h4>
+        <table class="tbl_main" align="center">
+            <tr>
+                <td colspan="3" align="center">
+                    <label class="headerlabel">
+                       Library Management System Registration</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td colspan="2">
+                    <label class="mandatorylabel">
+                       Fields marked with <font color="red">*</font>are mandatory</label>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="mandatory"></td>
+                <td colspan="2" class="datealign">
+                    <input type="radio" id="r_issue" name="data" checked="checked"/>Issue
+                    <input type="radio" id="r_submission" disabled="disabled" name="data"/>Submission
+
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory">*</td>
+                <td class="alignleft">
+                    Name
+                </td>
+                <td>
+                    <input type="text" id="txt_name" maxlength="35" onkeypress="JavaScript:return alphanumeric_validation(event)";/>
+                </td>
+            </tr>
+            <tr>
+                <td class="mandatory"></td>
+                <td class="alignleft">
+                    Gender
+                </td>
+                <td>
+                    <input type="radio" id="r_male" name="sex" value="Male" checked="checked"/>Male
+                    <input type="radio" id="r_female" name="sex" value="Female"/>Female
+                </td>
+           </tr>
+            <tr>
+                <td class="mandatory">*</td>
+                <td class="alignleft">
+                    Date of Birth
+                </td>
+                <td>
+                <input type="text" id="txt_dob" name="thedate" maxlength="10" readonly="readonly"/>&nbsp;&nbsp; <img src="images/Calender.gif" align="top" alt="Calendar" onclick="displayCalendar(document.forms[0].thedate,'yyyy-mm-dd',this)" />
+                </td>
+       
+            </tr>
+            <tr>
+                <td></td>
+            <td class="alignleft">
+                    Member
+                </td>
+                <td>
+                    <input type="radio" id="r_student" name="desgination"  value="Student" checked="checked"/>Student
+                    <input type="radio" id="r_asstfaculty" name="desgination" value="AsstFaculty"/>AsstFaculty
+                    <input type="radio" id="r_seniorfaculty" name="desgination" value="SeniorFaculty"/>SeniorFaculty
+                </td>
+                </tr>
+                <tr>
+                <td class="mandatory">*</td>
+                <td class="alignleft">
+                    Member Id:
+                </td>
+                <td><input type="text" id="txt_memberid" maxlength="30" onkeypress="JavaScript:return alphanumeric_validation(event)";/>
+                </td>
+                </tr>
+
+                <tr>
+                <td class="mandatory">*</td>
+                <td class="alignleft">
+                    Mobile No:
+                </td>
+                <td><input type="text" id="txt_module" maxlength="14" onkeypress="return num_mobile(event)"/>
+                (+91-9030225995)</td>
+                </tr>
+                <tr>
+                <td class="mandatory">*</td>
+                <td class="alignleft">
+                    Email Id:
+                </td>
+                <td><input type="text" maxlength="30" id="txt_emailid" />
+                </td>
+                </tr>
+                <tr>
+                <td class="mandatory">*</td>
+                <td class="alignleft">
+                    Address:
+                </td>
+                <td>
+                    <textarea id="txtarea_address" cols="25" rows="5" maxlength="128"></textarea>
+                </td>
+                </tr>
+                <tr>
+                <td class="mandatory">*</td>
+                <td class="alignleft">
+                    Issue Date:
+                </td>
+                <td>
+                    <input type="text" id="txt_issuedate" readonly="readonly" onfocus="funStartTime()" />  
+                </td>
+                </tr>
+                 <tr>
+                 <td class="mandatory">*</td>
+                <td class="alignleft">
+                    Year:
+                </td>
+                <td>
+                   <input type="text" id="txt_year"  maxlength="1" onkeypress="return num_validation(event)" />
+                (1/2/3/4)</td>
+            </tr>   
+                <tr><td class="mandatory">*</td>
+                <td class="alignleft">Branch:</td>
+                    <td>
+                    <select id="sel_branch" onchange="show_table()">
+                        <option value="Select" id="op1">Select </option>
+                        <option value="CSE" id="op2">CSE </option>
+                        <option value="MCA" id="op3">MCA </option>
+                        <option value="ECE" id="op4">ECE</option>
+                    </select>
+                </td>
+               </tr>
+            <tr>
+                <td class="mandatory">*</td>
+                <td class="alignleft">
+                   Books:
+                </td>
+                <td id="chk_table" class="alignleft">
+                    <label id="txt_books"></label>
+                    <table id="tbl_cse" class="alignleft"><tr><td><input type="checkbox" id="chk_1" value="OS" />OS</td>
+                                               <td><input type="checkbox" id="chk_2" value="JAVA"/>Java</td>
+                                            </tr>
+                    </table>
+                    <table id="tbl_mca" class="alignleft"><tr><td><input type="checkbox" id="chk_3" value="C++"/>C++</td>
+                                               <td><input type="checkbox" id="chk_4" value="OR"/>OR</td>
+                                            </tr>
+                    </table>
+                    <table id="tbl_ece" class="alignleft"><tr><td><input type="checkbox" id="chk_5" value="OS"/>OS</td>
+                                             <td><input type="checkbox" id="chk_6" value="C"/>C</td>
+                                        </tr>
+                    </table>
+               
+                </td>
+                </tr>
+            <tr><td colspan="2"></td>
+                <td>
+                        <table><tr><td id="td_submit"><label id="lbl_submit"><input type="button" class="buttonstyle" id="btn_submit" value="Submit" onclick="javascript:funSubmit()" />
+                                         </label></td>
+                                    <td id="td_clear"><input type="button" class="buttonstyle" id="btn_clear" value="Clear" onclick="javascript:funClear()" /></td>
+                                    <td><input type="submit" class="buttonstyle" id="btn_cancel" value="Cancel"/></td>          
+                                </tr>
+                                </table>
+                  
+                     
+                    
+                </td>
+            </tr>
+        </table>
+        <div class="griddivstyle">
+        <table id="tbl_grid" cellpadding="1" cellspacing="1">
+		<tr><td colspan="14" class="grid fontbold">Available Records:<label id="count_rec">0</label></td></tr>
+            <tr>
+                <td class="grid labelalign width25">
+                    E
+                </td>
+                <td class="grid labelalign width25">
+                    D
+                </td>
+                <td class="grid labelalign">
+                   Name
+                </td>
+                <td class="grid labelalign">
+                    Gender
+                </td>
+                <td class="grid width40 labelalign ">
+                    DOB
+                </td>
+                <td class="grid width25 labelalign ">
+                   MemberType
+                </td>
+                <td class="grid labelalign">
+                    MemberId
+                </td>
+                <td class="grid labelalign">
+                    Mobile
+                </td>
+                <td class="grid labelalign">
+                    EmailId
+                </td>
+                <td class="grid labelalign">
+                    Address
+                </td>
+                <td class="grid labelalign">
+                    IssueDate
+                </td>
+                <td class="grid labelalign">
+                    Year
+                </td>
+                <td class="grid labelalign">
+                    Branch
+                </td>
+                <td class="grid labelalign">
+                    TextBooks
+                </td>
+               
+            </tr>
+        </table>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
